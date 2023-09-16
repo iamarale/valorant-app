@@ -1,37 +1,41 @@
 // https://valorant-api.com/v1/agents
-
-import { useEffect } from "react"
-import { useState } from "react"
-
-
+import { useEffect, useState } from "react";
 
 export default function App() {
-
   // state
-  const [valData, setValData] = useState([])
+  const [query, setQuery] = useState('agents')
+  const [valData, setValData] = useState([]);
 
   // useEffects
   useEffect(() => {
     async function getValorantData() {
       try {
-        const res = await fetch(`https://valorant-api.com/v1/agents`);
-        if (!res.ok) throw new Error("OMG BRO THE FETCH REQUEST IS NOT 200 BRO WTF ITS NOT WORKING BRO WHAT HAPPENED BRO?!??! B RO FIX THIS ASAP NOW!")
-        const data = res.json();
+        const res = await fetch(`https://valorant-api.com/v1/${query}`);
+        if (!res.ok) throw new Error("There was an error fetching the dagrGRGARGARGta");
+        const data = await res.json();
+        console.log(data)
         setValData(data)
       } catch (err) {
-        console.error(err.MESSAGE)
+        console.error(err)
       }
     }
-  }, [])
+    getValorantData()
+  }, [query]);
 
   // funcs
 
-
   return (
-    <>
-      <header>
-
+    <div className="bg-primary-blue h-full">
+      <header className="">
+        <h1>Valorant Info</h1>
       </header>
-    </>
+    </div>
   )
+}
+
+function CurrentQuery() {
+
+  return <>
+
+  </>
 }
