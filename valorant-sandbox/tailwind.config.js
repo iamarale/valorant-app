@@ -12,8 +12,6 @@ export default {
         'gray-light': '#DAD8DA',
         'gray-dark': '#404143',
         'black': '#0E0F11',
-
-
       }
     },
   },
