@@ -5,8 +5,9 @@ import Header from "./Components/Header";
 
 export default function App() {
   // state
-  const [query, setQuery] = useState('agents')
+  const [query, setQuery] = useState('agents');
   const [valData, setValData] = useState([]);
+  const [isDark, setIsDark] = useState(false)
 
   // useEffects
   useEffect(() => {
@@ -26,12 +27,12 @@ export default function App() {
   // funcs
 
   return (
-    <div className="max-h-max">
-      <Header />
+    <div className={`max-h-max px-2 ${!isDark ? "bg-lm-background text-lm-text" : "bg-dm-background text-dm-text"}`}>
+      <Header isDark={isDark} />
 
-      <main className="grid items-center justify-center  gap-4 container mx-auto sm:grid-cols-2 lg:grid-cols-3">
+      <main className="grid gap-4 container mx-auto sm:grid-cols-2 md:justify-center lg:grid-cols-3">
         {/* Agents */}
-        <Agents agentData={valData} />
+        <Agents isDark={isDark} agentData={valData} />
       </main>
     </div>
   )

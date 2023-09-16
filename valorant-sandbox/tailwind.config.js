@@ -7,12 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-clr': '#BC9F69',
-        'secondary-clr': '#B0A3A5',
-        'primary-light': '#344350',
-        'secondary-light': '#DAD8DA',
-        'primary-dark': '#404143',
-        'secondary-dark': '#404143',
+        // Light Mode
+        "lm-primary": "#2e3e3e",
+        "lm-secondary": "#dddada",
+        "lm-accent": "#657d95",
+        "lm-background": "#e9e8e8",
+        "lm-text": "#030203",
+
+        // Dark Mode
+        "dm-primary": "#2e3e3e",
+        "dm-secondary": "#100f0f",
+        "dm-accent": "#bfc9d4",
+        "dm-background": "#030203",
+        "dm-text": "#e9e8e8",
       }
     },
   },
