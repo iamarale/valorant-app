@@ -8,18 +8,18 @@ export default {
     extend: {
       colors: {
         // Light Mode
-        "lm-primary": "#2e3e3e",
-        "lm-secondary": "#dddada",
-        "lm-accent": "#657d95",
-        "lm-background": "#e9e8e8",
-        "lm-text": "#030203",
+        "lm-text": "#090a0b",
+        "lm-background": "#ececef",
+        "lm-primary": "#a4a7b2",
+        "lm-secondary": "#c5c5d8",
+        "lm-accent": "#5f616d",
 
         // Dark Mode
-        "dm-primary": "#2e3e3e",
-        "dm-secondary": "#100f0f",
-        "dm-accent": "#bfc9d4",
-        "dm-background": "#030203",
-        "dm-text": "#e9e8e8",
+        "dm-text": "#ececef",
+        "dm-background": "#121615",
+        "dm-primary": "#a4a7b2",
+        "dm-secondary": "#020203",
+        "dm-accent": "#adafb8",
       }
     },
   },
