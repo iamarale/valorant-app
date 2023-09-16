@@ -8,6 +8,7 @@ export default function App() {
   const [query, setQuery] = useState('agents');
   const [valData, setValData] = useState([]);
   const [isDark, setIsDark] = useState(false)
+  const [showDetails, setShowDetail] = useState(false)
 
   // useEffects
   useEffect(() => {
