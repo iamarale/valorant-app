@@ -28,10 +28,10 @@ export default function App() {
   // funcs
 
   return (
-    <div className={`max-h-max px-2 ${!isDark ? "bg-lm-background text-lm-text " : "bg-dm-background text-dm-text"}`}>
+    <div className={`max-h-max px-2 duration-200 ${!isDark ? "bg-lm-background text-lm-text " : "bg-dm-background text-dm-text"}`}>
       <Header isDark={isDark} toggleIsDark={setIsDark} />
 
-      <main className="grid gap-4 container mx-auto sm:grid-cols-2 md:justify-center lg:grid-cols-3">
+      <main className="grid gap-4 container mx-auto sm:grid-cols-2 md:justify-items-center lg:grid-cols-3">
         {/* Agents */}
         <Agents isDark={isDark} agentData={valData} />
       </main>
