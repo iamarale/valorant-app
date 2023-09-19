@@ -1,6 +1,11 @@
+import PropTypes from 'prop-types';
 import Tags from "./Tags"
-export default function Agent({ agentData, isDark }) {
+export default function Agents({ agentData, isDark }) {
     // console.log(agentData.displayName)
+    Agents.propTypes = {
+        isDark: PropTypes.bool.isRequired,
+        agentData: PropTypes.array.isRequired,
+    };
 
     return <>
         {agentData && agentData.map(agent => <div key={agent.uuid} className={`border-[2px] p-2 max-w-sm rounded-md flex flex-col ${!isDark ? "border-lm-primary" : "border-dm-primary"}`}>

@@ -2,13 +2,14 @@
 import { useEffect, useState } from "react";
 import Agents from "./Components/Agents"
 import Header from "./Components/Header";
+import PropTypes from 'prop-types';
 
 export default function App() {
   // state
   const [query, setQuery] = useState('agents');
   const [valData, setValData] = useState([]);
   const [isDark, setIsDark] = useState(false)
-  const [showDetails, setShowDetail] = useState(false)
+
 
   // useEffects
   useEffect(() => {
@@ -25,13 +26,11 @@ export default function App() {
     getValorantData()
   }, [query]);
 
-  // funcs
-
   return (
     <div className={`max-h-max px-2 duration-200 ${!isDark ? "bg-lm-background text-lm-text " : "bg-dm-background text-dm-text"}`}>
       <Header isDark={isDark} toggleIsDark={setIsDark} />
 
-      <main className="grid gap-4 container mx-auto sm:grid-cols-2 md:justify-items-center lg:grid-cols-3">
+      <main className="grid gap-4 justify-center  container mx-auto sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
         {/* Agents */}
         <Agents isDark={isDark} agentData={valData} />
       </main>
