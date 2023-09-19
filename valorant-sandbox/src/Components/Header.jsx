@@ -1,6 +1,6 @@
 import { FiSun, FiMoon } from "react-icons/fi";
 
-export default function ({ toggleIsDark, isDark }) {
+export default function Header({ toggleIsDark, isDark }) {
 
     return <header className={`border-b-2 py-8 mb-6 container mx-auto ${!isDark ? "border-b-lm-accent" : "border-b-dm-accent"}`}>
         <h1 className="text-3xl font-bold">The Valorant Info Hub</h1>

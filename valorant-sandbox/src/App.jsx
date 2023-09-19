@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Agents from "./Components/Agents"
 import Header from "./Components/Header";
 import PropTypes from 'prop-types';
+import { Navigation } from "./Components/Navigation";
 
 export default function App() {
   // state
@@ -18,18 +19,24 @@ export default function App() {
         const res = await fetch(`https://valorant-api.com/v1/${query}`);
         if (!res.ok) throw new Error("There was an error fetching the dagrGRGARGARGta");
         const data = await res.json();
+
+        // valData holds api data
         setValData(data.data)
       } catch (err) {
         console.error(err)
       }
     }
+    // runs init render and everytime query gets updated
     getValorantData()
   }, [query]);
+
+  console.log(valData[0])
+  console.log(valData[0]?.isPlayableCharacter)
 
   return (
     <div className={`max-h-max px-2 duration-200 ${!isDark ? "bg-lm-background text-lm-text " : "bg-dm-background text-dm-text"}`}>
       <Header isDark={isDark} toggleIsDark={setIsDark} />
-
+      <Navigation />
       <main className="grid gap-4 justify-center  container mx-auto sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
         {/* Agents */}
         <Agents isDark={isDark} agentData={valData} />
