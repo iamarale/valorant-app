@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Agents from "./Components/Agents"
 import Header from "./Components/Header";
-import PropTypes from 'prop-types';
 import { Navigation } from "./Components/Navigation";
 
 export default function App() {
