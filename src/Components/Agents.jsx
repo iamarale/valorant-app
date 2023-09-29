@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Tags from "./Tags"
-export default function Agents({ agentData, isDark }) {
+export default function Agents({ agentData, isDark, setCurSelected }) {
 
     return <>
         {agentData && agentData.map(agent => agent.isPlayableCharacter && <div key={agent.uuid} className={`border-[2px] p-2 max-w-sm rounded-md flex flex-col ${!isDark ? "border-lm-primary" : "border-dm-primary"}`}>
@@ -13,7 +13,13 @@ export default function Agents({ agentData, isDark }) {
             <div className="max-w-full md:max-w-full pt-2 pb-8">
                 <p className={``}>{agent.description}</p>
             </div>
-            <button className={`mt-auto max-w-max py-1 px-3 rounded duration-200 hover:bg-opacity-50 ${isDark ? "bg-dm-primary " : "bg-lm-primary"}`}>Learn More</button>
+            <button
+                className={`mt-auto max-w-max py-1 px-3 rounded duration-200 hover:bg-opacity-50 ${isDark ? "bg-dm-primary " : "bg-lm-primary"}`}
+                onClick={() => {
+                    setCurSelected(agent.displayName)
+                    console.log()
+                }}
+            >Learn More</button>
         </div>)
         }
     </>

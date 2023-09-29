@@ -1,15 +1,27 @@
 // https://valorant-api.com/v1/agents
 import { useEffect, useState } from "react";
-import Agents from "./Components/Agents"
 import Header from "./Components/Header";
 import { Navigation } from "./Components/Navigation";
+
+// const reducer(){
+//   switch (key) {
+//     case value:
+//       return console.log(`lol`)
+
+//     default:
+//       throw new Error("something went wrong lol")
+//   }
+// }
 
 export default function App() {
   // state
   const [query, setQuery] = useState('agents');
   const [isLoading, setIsLoading] = useState(false)
   const [valData, setValData] = useState([]);
-  const [isDark, setIsDark] = useState(false)
+  const [curSelected, setCurSelected] = useState(false)
+  const [isDark, setIsDark] = useState(false);
+  // const initialState = {}
+  // const [state, dispatch] = useReducer(reducer, '');
 
 
   // useEffects
@@ -31,15 +43,15 @@ export default function App() {
     getValorantData()
   }, [query]);
 
+  console.log(curSelected)
 
   return (
     <div className={`max-h-max px-2 duration-200 ${!isDark ? "bg-lm-background text-lm-text " : "bg-dm-background text-dm-text"}`}>
       <Header isDark={isDark} toggleIsDark={setIsDark} />
       <Navigation />
-      <main className="grid gap-4 justify-center  container mx-auto sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
-        {/* Agents */}
-        {isLoading ? <h1 className="text-center text-4xl">Loading</h1> : <Agents isDark={isDark} agentData={valData} />}
-      </main>
+      
+    
+
     </div>
   )
 }
