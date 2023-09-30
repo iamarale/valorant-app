@@ -10,27 +10,36 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
         return selectedAgent;
     }
 
+    const isLoadingContent = isLoading && <h1 className="text-4xl font-bold">Loading....</h1>;
+
     // Get the selected agent object
     const selectedAgent = getSelectedAgent();
 
-    const btnStyles = `border-primary border-2 rounded px-1 py-0.5 duration-200 hover:bg-opacity-60 hover:bg-primary`
+    // Button styles
+    const buttonStyles = `border-primary border-2 rounded px-1 py-0.5 duration-200 hover:bg-opacity-60 hover:bg-primary`;
+
+
     // JSX
     return (
         <div className="mt-16 h-full">
             {/* Gets ID agent */}
             {/* gets all Agents */}
-            {isLoading && <h1 className="text-4xl font-bold">Loading....</h1>}
+            {isLoadingContent}
+
             {selectedAgent
                 ?
+                // Displays more complex information about the agent
+                    // DISPLAY: abilities, roles, colors, full portrait, developer name, ?.tags, 
                 <div className="border-[1px] h-full border-primary p-2 rounded">
-                    <div className="">
-                        <h1>{selectedAgent.displayName}</h1>
+
+                    <div className="mb-2">
+                        <h1 className="text-2xl text-primary">{selectedAgent.displayName}</h1>
                         <p>{selectedAgent.description}</p>
                     </div>
-                    <div></div>
-                    <button className={`${btnStyles}`} onClick={() => setSelectedId("")}>All Agents</button>
+                    <button className={`${buttonStyles}`} onClick={() => setSelectedId("")}>All Agents</button>
                 </div>
                 :
+                // maps through agents and display basic info. of each agent at a glance
                 agents.map(agent => {
                     if (agent.isPlayableCharacter) return (
                         <div key={agent.uuid} className={`border-[1px] border-primary p-2 my-6 rounded`}>
@@ -46,15 +55,12 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
                             <p className="mb-6">{agent.description}</p>
 
 
-                            <button className={`${btnStyles}`} onClick={() => {
+                            <button className={`${buttonStyles}`} onClick={() => {
                                 setSelectedId(agent.uuid)
                             }}>View More</button>
                         </div>
                     );
                 })}
-
-            {/* Display data from the selected agent */}
-            { }
         </div>
     );
 }
