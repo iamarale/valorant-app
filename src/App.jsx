@@ -33,7 +33,7 @@ export default function App() {
 
 
   return (
-    <div className={`max-h-max px-2 duration-200 `}>
+    <div className={`min-h-full px-2 duration-200 bg-background`}>
       <Header />
       <Navigation />
 

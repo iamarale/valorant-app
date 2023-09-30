@@ -9,7 +9,7 @@ export default {
       colors: {
         // Dark Mode
         "text": "#ececef",
-        "background": "#121615",
+        "background": "#111827",
         "primary": "#2A6551",
         "secondary": "#020203",
         "accent": "#adafb8",
