@@ -1,14 +1,21 @@
+import Button from "./Button"
 export default function MainContent({ selectedId, setSelectedId, agents, isLoading }) {
+
+
+    // sets agentuid in selectedId
+    function handleSelectedId(agentuid) {
+        setSelectedId(agentuid)
+    }
 
     // Function to get the selected agent
     const getSelectedAgent = () => {
         if (!selectedId || !agents) return null;
 
         // Find the agent with the matching uuid
-        const selectedAgent = agents.find(agent => agent.uuid === selectedId);
-        console.log(selectedAgent)
-        return selectedAgent;
+        return agents.find(agent => agent.uuid === selectedId);
     }
+
+
 
     const isLoadingContent = isLoading && <h1 className="text-4xl font-bold">Loading....</h1>;
 
@@ -21,7 +28,7 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
 
     // JSX
     return (
-        <div className="mt-16 h-full">
+        <section className="mt-16 h-full">
             {/* Gets ID agent */}
             {/* gets all Agents */}
             {isLoadingContent}
@@ -29,16 +36,21 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
             {selectedAgent
                 ?
                 // Displays more complex information about the agent
-                    // DISPLAY: abilities, roles, colors, full portrait, developer name, ?.tags, 
-                <div className="border-[1px] h-full border-primary p-2 rounded">
+                // DISPLAY: abilities, roles, colors, full portrait, developer name, ?.tags, 
+                <div className="border-[1px] h-full border-primary p-2 rounded grid sm:grid-cols-2">
 
-                    <div className="mb-2">
+                    <div className="mb-2 col-span-1">
                         <h1 className="text-2xl text-primary">{selectedAgent.displayName}</h1>
                         <p>{selectedAgent.description}</p>
                     </div>
-                    <button className={`${buttonStyles}`} onClick={() => setSelectedId("")}>All Agents</button>
+                    <div className="mb-2 col-span-1">
+                        <h1 className="text-2xl text-primary">{selectedAgent.displayName}</h1>
+                        <p>{selectedAgent.description}</p>
+                    </div>
+                    <button className={`${buttonStyles} max-w-max`} onClick={() => setSelectedId("")}>All Agents</button>
                 </div>
                 :
+
                 // maps through agents and display basic info. of each agent at a glance
                 agents.map(agent => {
                     if (agent.isPlayableCharacter) return (
@@ -54,13 +66,10 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
                             </div>
                             <p className="mb-6">{agent.description}</p>
 
-
-                            <button className={`${buttonStyles}`} onClick={() => {
-                                setSelectedId(agent.uuid)
-                            }}>View More</button>
+                            <Button onClick={() => handleSelectedId(agent.uuid)}>View More</Button>
                         </div>
                     );
                 })}
-        </div>
+        </section>
     );
 }
