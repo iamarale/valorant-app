@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import { Navigation } from "./Components/Navigation";
+import MainContent from "./Components/MainContent";
 
 // const reducer(){
 //   switch (key) {
@@ -19,7 +20,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [valData, setValData] = useState([]);
   const [curSelected, setCurSelected] = useState(false)
-  const [isDark, setIsDark] = useState(false);
   // const initialState = {}
   // const [state, dispatch] = useReducer(reducer, '');
 
@@ -43,15 +43,14 @@ export default function App() {
     getValorantData()
   }, [query]);
 
-  console.log(curSelected)
 
   return (
-    <div className={`max-h-max px-2 duration-200 ${!isDark ? "bg-lm-background text-lm-text " : "bg-dm-background text-dm-text"}`}>
-      <Header isDark={isDark} toggleIsDark={setIsDark} />
+    <div className={`max-h-max px-2 duration-200 `}>
+      <Header />
       <Navigation />
-      
-    
 
+      {/* displays content based on nav option*/}
+      <MainContent isLoading={isLoading} valData={valData} curSelected={curSelected} setCurSelected={setCurSelected} />
     </div>
   )
 }
