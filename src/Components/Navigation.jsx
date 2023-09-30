@@ -1,13 +1,15 @@
 import React from 'react'
 
 export const Navigation = () => {
+    const navStyles = `font-bold text-2xl text-primary opacity-50`;
+
     return (
         <nav>
             <ul className='flex justify-center gap-10'>
-                <li><a className='font-bold uppercase text-dm-primary nav-active' href="/">Agents</a></li>
-                <li><a className='font-bold uppercase text-dm-primary' href="/">Bundles</a></li>
-                <li><a className='font-bold uppercase text-dm-primary' href="/">Kits</a></li>
-            </ul>
-        </nav>
+                <li><a className={`${navStyles} opacity-100`} href="/">Agents</a></li>
+                <li><a className={`${navStyles}`} href="/">Bundles</a></li>
+                <li><a className={`${navStyles}`} href="/">Kits</a></li >
+            </ul >
+        </nav >
     )
 }
