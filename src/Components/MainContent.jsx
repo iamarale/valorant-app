@@ -1,32 +1,46 @@
-export default function MainContent({ curSelected, setCurSelected, valData, isLoading }) {
+export default function MainContent({ selectedId, setSelectedId, agents, isLoading }) {
 
-    function getAgentInfo() {
+    // Function to get the selected agent
+    const getSelectedAgent = () => {
+        if (!selectedId || !agents) return null;
 
-        valData.map()
+        // Find the agent with the matching uuid
+        const selectedAgent = agents.find(agent => agent.uuid === selectedId);
+        console.log(selectedAgent)
+        return selectedAgent;
     }
 
-    return <div className="grid gap-4 justify-center container mx-auto mt-16 sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
-        {valData &&
-            valData.map(agent => {
-                if (agent.isPlayableCharacter) return <div key={agent.uuid} className="border-[1px] border-primary p-2 max-w-sm rounded">
-                    <header className="flex items-center">
-                        <img className="h-[50px]" src={agent.displayIcon} alt="" />
-                        <h1 className="text-3xl text-primary ml-4">{agent.displayName}</h1>
-                    </header>
-                    <p className="mb-4">{agent.description}</p>
-                    <button
-                        className="bg-primary text-text py-2 px-3 rounded duration-150 hover:bg-opacity-80"
-                        onClick={() => setCurSelected(agent.uuid)}
-                    >More Details</button>
+    // Get the selected agent object
+    const selectedAgent = getSelectedAgent();
+
+
+    // JSX
+    return (
+        <div className="my-16">
+            {/* Gets ID agent */}
+            {/* gets all Agents */}
+            {isLoading && <h1 className="text-4xl font-bold">Loading....</h1>}
+            {selectedAgent
+                ? <div className=" border-2">
+                    <div className="container ">
+                        <h1>{selectedAgent.displayName}</h1>
+                        <p>{selectedAgent.description}</p>
+                    </div>
+                    <div></div>
                 </div>
-            })}
-        {curSelected && <p>Hello</p>}
+                : agents.map(agent => {
+                    if (agent.isPlayableCharacter) return (
+                        <div key={agent.uuid} className="border-[1px] my-6 rounded">
+                            <h1>{agent.displayName}</h1>
+                            <button onClick={() => {
+                                setSelectedId(agent.uuid)
+                            }}>Get Id</button>
+                        </div>
+                    );
+                })}
 
-    </div>
+            {/* Display data from the selected agent */}
+            { }
+        </div>
+    );
 }
-
-// text: #ececef
-// background: #121615
-// primary: #2A6551
-// secondary: #020203
-// accent: #adafb8

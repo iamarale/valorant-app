@@ -17,7 +17,6 @@ export default function Agents({ agentData, isDark, setCurSelected }) {
                 className={`mt-auto max-w-max py-1 px-3 rounded duration-200 hover:bg-opacity-50 ${isDark ? "bg-dm-primary " : "bg-lm-primary"}`}
                 onClick={() => {
                     setCurSelected(agent.displayName)
-                    console.log()
                 }}
             >Learn More</button>
         </div>)
