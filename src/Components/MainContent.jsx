@@ -28,7 +28,7 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
 
     // JSX
     return (
-        <section className="mt-16 h-full">
+        <section className="mt-16 h-full md:container md:mx-auto grid gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {/* Gets ID agent */}
             {/* gets all Agents */}
             {isLoadingContent}
@@ -37,22 +37,21 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
                 ?
                 // Displays more complex information about the agent
                 // DISPLAY: abilities, roles, colors, full portrait, developer name, ?.tags, 
-                <div className="border-[1px] h-full border-primary p-2 rounded grid sm:grid-cols-2">
+                <div className="border-[1px] h-full border-primary p-2 rounded md:grid-cols-2">
 
                     <div className="mb-2 col-span-1">
                         <h1 className="text-2xl text-primary">{selectedAgent.displayName}</h1>
                         <p>{selectedAgent.description}</p>
                     </div>
-
-
                     <button className={`${buttonStyles} max-w-max`} onClick={() => setSelectedId("")}>All Agents</button>
                 </div>
                 :
 
                 // maps through agents and display basic info. of each agent at a glance
+
                 agents.map(agent => {
                     if (agent.isPlayableCharacter) return (
-                        <div key={agent.uuid} className={`border-[1px] border-primary p-2 my-6 rounded`}>
+                        <div key={agent.uuid} className={`border-[1px] border-primary p-2 rounded container gap-2 sm:max-w-md  sm:mx-auto`}>
                             <header className="flex items-center">
                                 <img className="max-h-14 rounded-full" src={agent.displayIcon} alt="" />
                                 <h1 className="text-2xl font-bold ml-2">{agent.displayName}</h1>
@@ -67,7 +66,8 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
                             <Button onClick={() => handleSelectedId(agent.uuid)}>View More</Button>
                         </div>
                     );
-                })}
+                })
+            }
         </section>
     );
 }

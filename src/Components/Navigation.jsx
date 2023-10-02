@@ -6,7 +6,7 @@ export const Navigation = () => {
     return (
         <nav>
             <ul className='flex justify-center gap-10'>
-                <li><a className={`${navStyles} opacity-100`} href="/">Agents</a></li>
+                <li><a className={`${navStyles}`} href="/">Agents</a></li>
                 <li><a className={`${navStyles}`} href="/">Bundles</a></li>
                 <li><a className={`${navStyles}`} href="/">Kits</a></li >
             </ul >
