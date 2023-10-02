@@ -43,10 +43,8 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
                         <h1 className="text-2xl text-primary">{selectedAgent.displayName}</h1>
                         <p>{selectedAgent.description}</p>
                     </div>
-                    <div className="mb-2 col-span-1">
-                        <h1 className="text-2xl text-primary">{selectedAgent.displayName}</h1>
-                        <p>{selectedAgent.description}</p>
-                    </div>
+
+
                     <button className={`${buttonStyles} max-w-max`} onClick={() => setSelectedId("")}>All Agents</button>
                 </div>
                 :
