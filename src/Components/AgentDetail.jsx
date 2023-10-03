@@ -1,6 +1,8 @@
 import Button from "./UI/Button"
 import DisplayPortait from "./UI/DisplayPortrait"
-import Tags from "./Tags"
+import Tags from "./Tags";
+import { BiArrowBack } from "react-icons/bi";
+
 
 export default function AgentDetail({ setSelectedId, selectedAgent }) {
 
@@ -49,7 +51,11 @@ export default function AgentDetail({ setSelectedId, selectedAgent }) {
                 </div>)}
             </div>
 
-            <Button onClick={clearSelectedAgent}>All agents</Button>
+            <Button onClick={clearSelectedAgent}>
+
+                <BiArrowBack className="mr-2" />
+                All agents
+            </Button>
         </div>)}
     </>
 }
