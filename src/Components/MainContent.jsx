@@ -22,7 +22,7 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
 
     // JSX
     return (
-        <section className="mt-16 h-full grid gap-2 container mx-auto sm:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <section className="mt-16 min-h-full py-4 grid gap-2 container mx-auto sm:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {/* Gets ID agent */}
             {/* gets all Agents */}
             {isLoadingContent}
@@ -30,7 +30,7 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
             {selectedAgent
                 ?
                 // DISPLAY: abilities, roles, colors, full portrait, developer name, ?.tags, 
-                <AgentDetail selectedAgent={selectedAgent} />
+                <AgentDetail selectedAgent={selectedAgent} setSelectedId={setSelectedId} />
                 :
                 // Displays: name, description and display icon
                 <AllAgents getSelectedAgent={getSelectedAgent} setSelectedId={setSelectedId} agents={agents} />

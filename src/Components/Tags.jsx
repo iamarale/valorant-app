@@ -1,3 +1,3 @@
 export default function Tags({ children }) {
-    return <span className="inline-block  rounded-xl px-1.5"> <small>{children}</small></span>
+    return <span className="bg-primary px-2 rounded-full"> {children}</span>
 }
