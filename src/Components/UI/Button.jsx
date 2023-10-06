@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-export default function Button({ style, to, onClick, children }) {
-    const defaultStyles = `flex items-center px-2 py-1 border-primary border-2 rounded min-h-[20px] w-fit duration-200 hover:bg-opacity-60 hover:bg-primary`;
+export default function Button({ style = "btn-styles", to, onClick, children }) {
 
     return <Link
-        className={`${defaultStyles} ${style}`}
+        className={`btn-styles ${style}`}
         onClick={onClick}>{children}</Link>
 }

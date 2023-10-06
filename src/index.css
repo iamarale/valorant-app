@@ -3,14 +3,52 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    /*  */
+    --primary: hsl(160, 41%, 28%);
+    --background: hsl(221, 39%, 11%);
+    --secondary: hsl(240, 20%, 1%);
+    --accent: hsl(229, 7%, 70%);
+
+    /* Neutrals */
+    --primary-gray: #ccc;
+
+}
+
 html,
 body,
 #root {
     height: 100%;
     font-family: 'Lato', sans-serif;
-    color: #ccc;
+    color: var(--primary-gray);
 }
 
 #root {
-    background-color: #111827;
+    background-color: var(--background);
 }
+
+.btn-styles {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--primary);
+    padding: .3rem .6rem;
+    border-radius: .5rem;
+    min-height: 1.2rem;
+    max-width: fit-content;
+
+    transition: 200;
+}
+
+.btn-styles:hover {
+    background-color: hsla(160, 41%, 28%, .2);
+}
+
+
+/* media queries 
+    None    width: 100%;
+    sm      max-width: 640px;
+    md      max-width: 768px;
+    lg      max-width: 1024px;
+    xl      max-width: 1280px;
+    2xl     max-width: 1536px; 
+*/
