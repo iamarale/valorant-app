@@ -10,7 +10,7 @@ export default function AgentDetail({ setSelectedId, selectedAgent }) {
         setSelectedId("")
     }
     return <>
-        {selectedAgent && selectedAgent.map(agent => <div key={agent.uuid} className="border-2 min-h-full rounded-md p-2 col-span-4 ">
+        {selectedAgent && selectedAgent.map(agent => <div key={agent.uuid} className="border-2 min-h-full border-primary rounded-md p-2 col-span-4 ">
             {/* Images */}
             <div className="hidden md:block">
                 <h1 className="text-xl underline font-semibold mb-2">Images</h1>

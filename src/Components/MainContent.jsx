@@ -4,9 +4,6 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
 
 
     // sets agentuid in selectedId
-    function handleSelectedId(agentuid) {
-        setSelectedId(agentuid)
-    }
     const isLoadingContent = isLoading && <h1 className="text-4xl font-bold">Loading....</h1>;
 
     // Function to get the selected agent
@@ -22,9 +19,7 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
 
     // JSX
     return (
-        <section className="mt-16 min-h-full py-4 grid gap-2 container mx-auto sm:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-            {/* Gets ID agent */}
-            {/* gets all Agents */}
+        <section className=" pt-16 py-4 grid gap-2 container mx-auto sm:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {isLoadingContent}
 
             {selectedAgent
