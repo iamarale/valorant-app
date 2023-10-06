@@ -1,8 +1,10 @@
 // https://valorant-api.com/v1/agents
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "./Components/Header";
-import { Navigation } from "./Components/Navigation";
-import MainContent from "./Components/MainContent";
+import Kits from "./Pages/Kits";
+import Bundles from "./Pages/Bundles";
+import Homepage from "./Pages/Homepage";
+import Error from "./Pages/Error";
 
 export default function App() {
   // state
@@ -33,15 +35,23 @@ export default function App() {
 
 
   return (
-    <div className={`min-h-full px-2 duration-200 bg-background`}>
-      <Header />
-      <Navigation />
-
-      {/* displays content based on nav option*/}
-      <MainContent isLoading={isLoading} setSelectedId={setSelectedId} selectedId={selectedId} agents={agents} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage isLoading={isLoading} agents={agents} setSelectedId={setSelectedId} selectedId={selectedId} />}>Agent</Route >
+        <Route path="bundles" element={<Bundles />}>Bundles</Route>
+        <Route path="kits" element={<Kits />}>Kits</Route>
+        <Route path="*" element={<Error />}>Kits</Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
 
 
+// <div className={`min-h-full px-2 duration-200 bg-background`}>
+//   <Header />
+//   <Navigation />
+
+//   {/* displays content based on nav option*/}
+//   <MainContent isLoading={isLoading} setSelectedId={setSelectedId} selectedId={selectedId} agents={agents} />
+// </div>

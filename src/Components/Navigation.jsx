@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 export const Navigation = () => {
     const navStyles = `font-bold text-2xl text-primary opacity-50`;
@@ -6,10 +7,10 @@ export const Navigation = () => {
     return (
         <nav>
             <ul className='flex justify-center gap-10'>
-                <li><a className={`${navStyles}`} href="/">Agents</a></li>
-                <li><a className={`${navStyles}`} href="/">Bundles</a></li>
-                <li><a className={`${navStyles}`} href="/">Kits</a></li >
+                <li><NavLink to="/" className={navStyles}>Agents</NavLink></li>
+                <li><NavLink to="/bundles" className={navStyles}>Bundles</NavLink></li>
+                <li><NavLink to="/kits" className={navStyles}>Kits</NavLink></li>
             </ul >
-        </nav >
+        </nav>
     )
 }
