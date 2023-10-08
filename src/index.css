@@ -50,7 +50,7 @@ body,
 }
 
 .bg-secondary-light {
-    background: var(--secondary-light);
+    background: var(--accent);
 }
 
 /* media queries 
