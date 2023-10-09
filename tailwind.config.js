@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark Mode
         "text": "#ececef",
         "background": "#111827",
         "primary": "#2A6551",

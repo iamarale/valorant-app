@@ -19,7 +19,7 @@ export default function MainContent({ selectedId, setSelectedId, agents, isLoadi
 
     // JSX
     return (
-        <section className=" pt-16 py-4 grid gap-2 container mx-auto sm:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <section className="bg-primary pt-16 pb-2 px-2 grid gap-2  sm:gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {isLoadingContent}
 
             {selectedAgent
