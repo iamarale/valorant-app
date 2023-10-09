@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 export const Navigation = () => {
-    const navStyles = `font-bold text-2xl`;
+    const navStyles = `font-bold text-2xl container mx-auto`;
 
     return (
         <nav>
