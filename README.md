@@ -36,8 +36,10 @@ This application relies on the Valorant API from [https://valorant-api.com](http
 
 ## TODO List
 
-1. [x] **Responsive Design:** Ensure the application is fully responsive for various devices and screen sizes
+1. [x] **Responsive design:** Ensure the application is fully responsive for various devices and screen sizes
 2. [ ] **Dark mode:** Adds a toggle button to header to switch between light/dark modes
+2. [ ] **Add filters to bundles:** Add more filtering options such as 
+2. [ ] **Amount to spend:** For kits, allow user to put in a certain of coins and see how many kits/weapons you can buy.
 3. [ ] **Favorites:** Allow users to mark agents, weapons, or bundles as favorites for quick access
-4. [ ] **Performance Optimization:** Optimize API requests and application performance
-5. [ ] **useReducer Hook:** Replace useState with useReducer hook to make it easier to understand codebase
+4. [ ] **Performance optimization:** Optimize API requests and application performance
+5. [ ] **useReducer hook:** Replace useState with useReducer hook to make it easier to understand codebase
