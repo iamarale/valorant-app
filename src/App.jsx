@@ -65,7 +65,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Homepage isLoading={isLoading} agents={agents} setSelectedId={setSelectedId} selectedId={selectedId} />}>Agent</Route >
         <Route path="bundles" element={<Bundles bundles={bundles} />}>Bundles</Route>
-        <Route path="kits" element={<Kits />}>Kits</Route>
+        <Route path="kits" element={<Kits weapons={weapons} gear={gear} />}>Kits</Route>
         <Route path="*" element={<Error />}>Kits</Route>
       </Routes>
     </BrowserRouter>

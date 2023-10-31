@@ -44,6 +44,14 @@ body,
     background-color: hsla(160, 41%, 28%, .2);
 }
 
+td,
+tr,
+th {
+    border: 1px solid var(--primary);
+    padding: .15rem;
+}
+
+
 /* media queries 
     None    width: 100%;
     sm      max-width: 640px;
