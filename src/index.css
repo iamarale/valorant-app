@@ -3,30 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    /*  */
-    --primary: hsl(160, 41%, 28%);
-    --primary-light: hsl(160, 41%, 35%);
-    --secondary: hsl(240, 20%, 1%);
-    --secondary-light: hsl(240, 20%, 15%);
-    --background: hsl(221, 39%, 90%);
-    --accent: hsl(229, 7%, 70%);
-
-    /* Neutrals */
-    --primary-gray: hsl(0, 0%, 80%);
-}
-
 html,
 body,
 #root {
     height: 100%;
     font-family: 'Lato', sans-serif;
     color: var(--primary-gray);
-    background: var(--primary);
+    background: var(--secondary-light);
 }
-
-
-
 
 /* media queries 
     None    width: 100%;
