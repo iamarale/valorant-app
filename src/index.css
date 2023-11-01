@@ -19,37 +19,13 @@
 html,
 body,
 #root {
-    min-height: 100vh;
+    height: 100%;
     font-family: 'Lato', sans-serif;
     color: var(--primary-gray);
+    background: var(--primary);
 }
 
-#root {
-    background-color: var(--background);
-}
 
-.btn-styles {
-    display: flex;
-    align-items: center;
-    border: 2px solid var(--accent);
-    padding: .3rem .6rem;
-    border-radius: .5rem;
-    min-height: 1.2rem;
-    max-width: fit-content;
-    color: var(--accent);
-    transition: 200;
-}
-
-.btn-styles:hover {
-    background-color: hsla(160, 41%, 28%, .2);
-}
-
-td,
-tr,
-th {
-    border: 1px solid var(--primary);
-    padding: .15rem;
-}
 
 
 /* media queries 
@@ -59,4 +35,22 @@ th {
     lg      max-width: 1024px;
     xl      max-width: 1280px;
     2xl     max-width: 1536px; 
+*/
+
+/*
+// Fetch Agents 
+const agentResponse = await fetch(`https://valorant-api.com/v1/agents`);
+const agentData = await agentResponse.json();
+
+// Fetch bundles 
+const bundlesResponse = await fetch(`https://valorant-api.com/v1/bundles`);
+const bundlesData = await bundlesResponse.json();
+
+// Fetch weapons 
+const weaponsResponse = await fetch(`https://valorant-api.com/v1/weapons`);
+const weaponsData = await weaponsResponse.json();
+
+// Fetch gear 
+const gearResponse = await fetch(`https://valorant-api.com/v1/gear`);
+const gearData = await gearResponse.json();
 */
