@@ -1,4 +1,4 @@
 export default function Homepage() {
-    return <div>Homepage </div>
+    return <div className="bg-valorant-red h-full text-light-gray">Homepage </div>
 }
 
