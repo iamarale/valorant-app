@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary": " hsl(160, 41%, 28%)",
-        "secondary": "hsl(240, 20%, 15%)",
+        "valorant-red": "hsl(354, 98%, 63%)",
         "light-gray": "hsl(0, 0%, 85%)",
-        "dark-gray": "hsl(0, 0%, 25%)"
+        "dark-gray": "hsl(0, 0%, 25%)",
       }
     },
   },
   plugins: [],
 }
+
