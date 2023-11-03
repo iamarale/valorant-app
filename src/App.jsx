@@ -28,6 +28,7 @@ export default function App() {
         const shieldsData = await shieldsResponse.json();
         const weaponsData = await weaponsResponse.json();
 
+        setIsLoading(false)
         // sets the states to the data
         setAgents(agentData.data)
         setBundles(bundlesData.data)

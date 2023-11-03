@@ -8,8 +8,9 @@ export default {
     extend: {
       colors: {
         "valorant-red": "hsl(354, 98%, 60%)",
+        "beige": "hsl(42, 20%, 90%)",
         "light-gray": "hsl(0, 0%, 95%)",
-        "dark-gray": "#041D2A",
+        "dark-gray": "hsl(210, 40%, 10%)",
       }
     },
   },
