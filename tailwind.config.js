@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        "valorant-red": "hsl(354, 98%, 63%)",
-        "light-gray": "hsl(0, 0%, 85%)",
-        "dark-gray": "hsl(0, 0%, 25%)",
+        "valorant-red": "hsl(354, 98%, 60%)",
+        "light-gray": "hsl(0, 0%, 95%)",
+        "dark-gray": "#041D2A",
       }
     },
   },
