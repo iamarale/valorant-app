@@ -7,7 +7,7 @@ export default function AgentDetail({ selectedAgent, setSelectedAgent }) {
         setSelectedAgent("");
     }
 
-    return (<div className={`border-2 border-dark-gray text-dark-gray rounded p-2 `} key={selectedAgent.uuid}>
+    return (<div className={`container mx-auto lg:max-w-2xl border-2 border-dark-gray text-dark-gray rounded p-2 col-span-3`} key={selectedAgent.uuid}>
         <header className="flex justify-between items-center">
             <div className="mb-4">
 
@@ -26,14 +26,13 @@ export default function AgentDetail({ selectedAgent, setSelectedAgent }) {
             <p className="text-sm">{selectedAgent.role.description}</p>
         </div>
         <hr className="bg-dark-gray p-[1px] my-3"></hr>
-        <div>
-            <div></div>
-            {selectedAgent.abilities.map(ability => <ul key={ability.displayName} className="my-3">
-                <div className="flex items-center justify-between">
+        <div >
+            {selectedAgent.abilities.map(ability => <ul key={ability.displayName} className="my-3 lg:mb-6">
+                <div className="flex items-center justify-between ">
 
-                    <li>{ability.slot}</li>
-                    <li className="flex items-center justify-between">{ability.displayName}</li>
-                    <li><img className="max-h-8 bg-valorant-red rounded-full" src={ability.displayIcon} alt="" /></li>
+                    <li className="font-semibold text-valorant-red">{ability.slot}</li>
+                    <li ><img className="max-h-8 bg-valorant-red rounded-full" src={ability.displayIcon} alt="" /></li>
+                    <li className="font-semibold text-valorant-red">{ability.displayName}</li>
                 </div>
                 <li>{ability.description}</li>
             </ul>)}

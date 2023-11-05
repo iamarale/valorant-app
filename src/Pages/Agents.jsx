@@ -16,7 +16,7 @@ export default function Agents({ allAgents, isLoading }) {
     // Displaying of the agents
     return <div className="bg-beige text-dark-gray h-full">
         <Header />
-        <main className="grid gap-2 my-4 px-2 md:grid-cols-2 lg:grid-cols-3">
+        <main className="justify-items-center my-4 px-2">
             {/* {allAgents ? <div>YURR</div> : <h1>There was a problem fetching data</h1>} */}
             {selectedAgent ? <AgentDetail selectedAgent={selectedAgent} setSelectedAgent={setSelectedAgent} /> : <DisplayAllAgents selectedAgent={selectedAgent} setSelectedAgent={setSelectedAgent} allAgents={allAgents} />}
         </main>
