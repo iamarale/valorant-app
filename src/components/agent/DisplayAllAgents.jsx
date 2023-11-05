@@ -1,3 +1,4 @@
+import Button from "../UI/Button"
 export default function DisplayAllAgents({ allAgents, setSelectedAgent }) {
     function getSelectedAgent(selectedAgent) {
         setSelectedAgent(selectedAgent)
@@ -8,7 +9,7 @@ export default function DisplayAllAgents({ allAgents, setSelectedAgent }) {
                 <h1>{agent.displayName}</h1>
                 <img className="h-8 md:h-12 lg:h-16" src={agent.displayIcon} alt={`A picture of the valorant agent ${agent.displayName}`} />
             </div>
-            <button onClick={() => getSelectedAgent(agent)}>Select Agent</button>
+            <Button onClick={() => getSelectedAgent(agent)}>Select Agent</Button>
         </div>)
 
     )
