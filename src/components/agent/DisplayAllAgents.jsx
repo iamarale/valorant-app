@@ -1,8 +1,6 @@
-export default function DisplayAllAgents({ allAgents, selectedAgentId, setSelectedAgentId, setIsAgentSelected }) {
+export default function DisplayAllAgents({ allAgents, setSelectedAgent }) {
     function getSelectedAgent(selectedAgent) {
-        setSelectedAgentId(selectedAgent)
-        console.log(selectedAgent)
-        // setIsAgentSelected(true)
+        setSelectedAgent(selectedAgent)
     }
     return (
         allAgents.map(agent => <div key={agent.uuid} className="border-2 border-dark-gray text-dark-gray rounded p-2">
