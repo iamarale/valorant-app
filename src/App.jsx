@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./Pages/Homepage"
-import Agents from "./Pages/Agents";
-import Bundles from "./Pages/Bundles";
-import PageNotFound from "./Pages/PageNotFound";
+import Homepage from "./pages/Homepage"
+import Agents from "./pages/Agents";
+import Bundles from "./pages/Bundles";
+import Kits from "./pages/Kits";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
   const [agents, setAgents] = useState([])
@@ -46,7 +47,7 @@ export default function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="agents" element={<Agents isLoading={isLoading} allAgents={agents} />} />
       <Route path="bundles" element={<Bundles bundles={bundles} />} />
-      <Route path="kits" element={<Bundles weapons={weapons} shields={shields} />} />
+      <Route path="kits" element={<Kits weapons={weapons} shields={shields} />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   </BrowserRouter>

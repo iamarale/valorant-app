@@ -2,7 +2,7 @@ export default function AgentDetail({ allAgents }) {
     return (
         allAgents && allAgents.map(agent => {
             if (agent.isPlayableCharacter) {
-                return <div className={`border-2 border-dark-gray text-dark-gray rounded p-2 bg-[url()]`} key={agent.uuid}>
+                return <div className={`border-2 border-dark-gray text-dark-gray rounded p-2 `} key={agent.uuid}>
                     <header className="flex justify-between items-center">
                         <div className="mb-4">
 
