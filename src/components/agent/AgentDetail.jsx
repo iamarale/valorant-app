@@ -1,7 +1,6 @@
 import Button from "../UI/Button";
 
 export default function AgentDetail({ selectedAgent, setSelectedAgent }) {
-    console.log(selectedAgent.displayName);
 
     function resetSelectedAgent() {
         setSelectedAgent("");
