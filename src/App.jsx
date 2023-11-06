@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage"
-import Agents from "./pages/Agents";
-import Bundles from "./pages/Bundles";
-import Kits from "./pages/Kits";
-import PageNotFound from "./pages/PageNotFound";
+import Homepage from "./pages/Homepage.jsx"
+import Agents from "./pages/Agents.jsx";
+import Bundles from "./pages/Bundles.jsx";
+import Kits from "./pages/Kits.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
 
 export default function App() {
   const [agents, setAgents] = useState([])
