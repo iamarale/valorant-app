@@ -2,8 +2,8 @@ import { useState } from "react";
 import AgentDetail from "../components/agent/AgentDetail";
 import DisplayAllAgents from "../components/agent/DisplayAllAgents";
 import Header from "../components/header/Header"
-
 export default function Agents({ allAgents, isLoading }) {
+    document.title = "Agents"
     const [selectedAgent, setSelectedAgent] = useState("");
     // Displays if data isn't loaded yet
     if (isLoading) {

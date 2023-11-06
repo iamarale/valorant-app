@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 
 export default function Homepage() {
+    document.title = "Homepage of Valorant Information Hub"
     return <div className="h-ful text-dark-gray">
         <Header />
         <main className="pt-4 container mx-auto px-2">
