@@ -27,9 +27,9 @@ export default function Bundles({ bundles }) {
         <Header />
         {searchBundle}
         <main className="container mx-auto flex items-center flex-col text-dark-gray mt-6 p-2">
-            <form className="md:max-w-2xl flex mx-auto container" onSubmit={(e) => e.preventDefault()}>
+            <form className="md:max-w-4xl  flex mx-auto container" onSubmit={(e) => e.preventDefault()}>
                 <input
-                    className="border-2 rounded-lg  flex-[1] border-dark-gray px-2 py-2 lg:py-1"
+                    className="border-2 rounded-lg md:py-4 flex-[1] border-dark-gray px-2 py-2 lg:py-1"
                     type="text"
                     placeholder="Search for a bundle"
                     onChange={(e) => setSearchBundle(e.target.value)}
@@ -45,24 +45,27 @@ export default function Bundles({ bundles }) {
                     <li key={favorite.displayName} className="border-2 border-dark-gray"><span className="text-lg px-1">{index + 1} </span>{favorite.displayName}</li>)
                     : null}
             </ul>
+            <div className="container mx-auto md:grid lg:grid-cols-2 gap-2">
 
-            {!searchBundle ? bundles.map(bundle => <div key={bundle.uuid} className="border-2 border-dark-gray my-2 rounded-lg">
-                <img className="md:max-w-2xl rounded-t-lg" src={bundle.displayIcon} alt={`A picture of ${bundle.displayName}`} />
-                <div className="p-2">
-                    <h1 className="text-lg underline font-thin pb-2">{bundle.displayName}</h1>
-                    <Button onClick={() => addtoFavorite(bundle)}>Favorite</Button>
-                </div>
-            </div>) : (
-                filteredBundles.map(bundle => (
-                    <div key={bundle.uuid} className="border-2 border-dark-gray my-2 rounded-lg">
-                        <img className="md:max-w-2xl rounded-t-lg" src={bundle.displayIcon} alt={`A picture of ${bundle.displayName}`} />
-                        <div className="p-2">
-                            <h1 className="text-lg underline font-thin pb-2">{bundle.displayName}</h1>
-                            <Button onClick={() => addtoFavorite(bundle)}>Favorite</Button>
-                        </div>
+                {!searchBundle ? bundles.map(bundle => <div key={bundle.uuid} className="border-2 border-dark-gray my-2 rounded-lg">
+                    <img className="md:min-w-full rounded-t-lg" src={bundle.displayIcon} alt={`A picture of ${bundle.displayName}`} />
+                    <div className="p-2">
+                        <h1 className="text-lg underline font-thin pb-2">{bundle.displayName}</h1>
+                        <Button onClick={() => addtoFavorite(bundle)}>Favorite</Button>
                     </div>
-                ))
-            )}
+                </div>) : (
+                    filteredBundles.map(bundle => (
+                        <div key={bundle.uuid} className="border-2 border-dark-gray my-2 rounded-lg">
+                            <img className="md:max-w-2xl rounded-t-lg" src={bundle.displayIcon} alt={`A picture of ${bundle.displayName}`} />
+                            <div className="p-2">
+                                <h1 className="text-lg underline font-thin pb-2">{bundle.displayName}</h1>
+                                <Button onClick={() => addtoFavorite(bundle)}>Favorite</Button>
+                            </div>
+                        </div>
+                    ))
+                )}
+            </div>
+
         </main>
     </div>
 }

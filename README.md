@@ -40,6 +40,7 @@ This application relies on the Valorant API from [https://valorant-api.com](http
 ## TODO List
 
 1. [x] **Responsive design:** Ensure the application is fully responsive for various devices and screen sizes
+3. [ ] **Design folder:** Create a design folder to house all the mockups for the pages
 3. [ ] **Favorites:** Allow users to mark bundles as favorites 
 2. [ ] **Dark mode:** Adds a toggle button to header to switch between light/dark modes
 2. [ ] **Filtering:** Add filtering options to the agents such as by role, name etc. 
