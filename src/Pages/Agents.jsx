@@ -14,12 +14,12 @@ export default function Agents({ allAgents, isLoading }) {
     }
 
     // Displaying of the agents
-    return <div className="bg-beige text-dark-gray h-full">
+    return <>
         <Header />
-        <main className="justify-items-center my-4 px-2">
+        <section className="justify-items-center my-4 px-2">
             {/* {allAgents ? <div>YURR</div> : <h1>There was a problem fetching data</h1>} */}
             {selectedAgent ? <AgentDetail selectedAgent={selectedAgent} setSelectedAgent={setSelectedAgent} /> : <DisplayAllAgents selectedAgent={selectedAgent} setSelectedAgent={setSelectedAgent} allAgents={allAgents} />}
-        </main>
-    </div>
+        </section>
+    </>
 }
 

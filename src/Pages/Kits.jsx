@@ -4,8 +4,11 @@ export default function Kits({ weapons, shields }) {
     document.title = "Weapons and Shields"
     console.log(weapons, shields)
 
-    return <div>
+    return <>
         <Header />
-        <h1>Kits</h1> </div>
+        <section>
+            <h1>Weapons and Shields</h1>
+        </section>
+    </>
 }
 
