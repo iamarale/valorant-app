@@ -5,7 +5,7 @@ export default function DisplayAllAgents({ allAgents, setSelectedAgent }) {
     }
     return (<div className="container mx-auto grid gap-2 md:grid-cols-2 lg:grid-cols-3 ">
         {
-            allAgents.map(agent => <div key={agent.uuid} className="border-2 border-dark-gray text-dark-gray rounded p-2">
+            allAgents.map(agent => agent.isPlayableCharacter && <div key={agent.uuid} className="border-2 border-dark-gray text-dark-gray rounded p-2">
                 <div className="flex items-center justify-between ">
                     <h1 className="text-lg font-semibold md:text-2xl">{agent.displayName}</h1>
                     <img className="h-8 bg-valorant-red rounded-full md:h-12 lg:h-16" src={agent.displayIcon} alt={`A picture of the valorant agent ${agent.displayName}`} />

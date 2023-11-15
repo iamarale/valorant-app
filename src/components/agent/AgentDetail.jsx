@@ -9,7 +9,6 @@ export default function AgentDetail({ selectedAgent, setSelectedAgent }) {
     return (<div className={`container mx-auto lg:max-w-2xl border-2 border-dark-gray text-dark-gray rounded p-2 col-span-3`} key={selectedAgent.uuid}>
         <header className="flex justify-between items-center">
             <div className="mb-4">
-
                 <h1 className="text-2xl text-dark-gray">{selectedAgent.displayName}</h1>
                 <p className="bg-valorant-red text-beige text-sm max-w-fit px-2 rounded-full">{selectedAgent.role.displayName}</p>
             </div>
